@@ -6,8 +6,8 @@
   <%= t.label :details %>
   <%= t.text_field :details %>
   <%= t.label :completed %>
-  <%= check_box_tag 'task[completed]', 1, @task.completed %>
+  <%= t.check_box :completed %>
   <%= t.submit %>
 <% end %>
 
-<a href="<%= back_to_tasks_path %>">Back to Tasks</a>
+ <%= link_to "Back to Tasks", back_to_tasks_path %>

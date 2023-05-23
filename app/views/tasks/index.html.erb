@@ -6,7 +6,11 @@
       <%= link_to task_path(task.id) do %>
         <%= task.title %>
         <%= task.details %>
-        <%= task.completed %>
+        <% if task.completed %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else %>
+          <i class="fa-regular fa-square"></i>
+        <% end %>
       <% end %>
     </li>
     <% end %>

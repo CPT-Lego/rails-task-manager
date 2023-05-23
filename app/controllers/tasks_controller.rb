@@ -34,13 +34,13 @@ class TasksController < ApplicationController
   def mark_completed
     @task = Task.find(params[:id])
     @task.update(completed: true)
-    redirect_to @task
+    redirect_to task_path(@task)
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+    redirect_to tasks_path, notice: 'Task was successfully destroyed.'
   end
 
   private
